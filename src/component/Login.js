@@ -10,7 +10,6 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import './Login.css'
 
-
 export class Login extends React.Component{
 
     render(){
@@ -54,3 +53,4 @@ export class Login extends React.Component{
     }
 
 }
+export default Login;

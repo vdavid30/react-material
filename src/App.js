@@ -8,7 +8,8 @@ import moment from "moment";
 import {Login} from './component/Login';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-class App extends Component {
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
+export class App extends Component {
 
     constructor(props) {
         super(props);
@@ -24,10 +25,7 @@ class App extends Component {
 
         return (
             <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h1 className="App-title">TODO React App</h1>
-                </header>
+
 
                 <br/>
                 <br/>
@@ -70,10 +68,10 @@ class App extends Component {
                     </Button>
 
                 </form>
-                <Login />
                 <br/>
                 <br/>
                 <TodoList todoList={this.state.items}/>
+
             </div>
         );
     }
