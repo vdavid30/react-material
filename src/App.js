@@ -22,7 +22,7 @@ export class App extends Component {
 
 
     render() {
-
+        const isLoggedIn = false;
         return (
             <div className="App">
 

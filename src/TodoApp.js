@@ -10,14 +10,17 @@ export class TodoApp extends React.Component {
     }
 
     render() {
+        const isLoggedIn = true;
+        const TodoView = () => (
+                <div>
+                    <App/>
+                </div>
+        );
         const LoginView = () => (
             <Login/>
         );
-        const TodoView = () => (
-            <div>
-                <App/>
-            </div>
-        );
+
+
         return (
                     <Router>
                         <div className="App">
@@ -35,7 +38,7 @@ export class TodoApp extends React.Component {
 
                             <div>
                                 <Route exact path="/" component={LoginView}/>
-                                <Route path="/todo" component={TodoView}/>
+                                {!isLoggedIn && <Route path="/todo" component={TodoView}/>}
                             </div>
                         </div>
                     </Router>
