@@ -10,7 +10,14 @@ export class TodoApp extends React.Component {
     }
 
     render() {
-        const isLoggedIn = true;
+        //Save data
+        localStorage.setItem('user', "david");
+        localStorage.setItem('password', "david");
+
+        //Read data
+        const usr = localStorage.getItem('user');
+        const psswd = localStorage.getItem('password');
+        const isLoggedIn = false;
         const TodoView = () => (
                 <div>
                     <App/>
