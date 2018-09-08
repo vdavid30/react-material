@@ -14,8 +14,13 @@ export class Login extends React.Component{
 
     render(){
         function verify() {
-            if (localStorage.getItem('user') == "david") {
+            if(document.getElementById('email').value == localStorage.getItem('user')  && document.getElementById('password').value == localStorage.getItem('password')){
                 localStorage.setItem('isLoggedIn', true);
+                alert("Login Successfull");
+            }else{
+                localStorage.setItem('isLoggedIn', false);
+                alert("Incorrect Credentials");
+
             }
         }
 

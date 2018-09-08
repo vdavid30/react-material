@@ -10,14 +10,12 @@ export class TodoApp extends React.Component {
     }
 
     render() {
-        //Save data
         localStorage.setItem('user', "david");
         localStorage.setItem('password', "david");
-
-        //Read data
+        localStorage.setItem('isLoggedIn', false);
         const usr = localStorage.getItem('user');
         const psswd = localStorage.getItem('password');
-        const isLoggedIn = false;
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
         const TodoView = () => (
                 <div>
                     <App/>
@@ -45,7 +43,7 @@ export class TodoApp extends React.Component {
 
                             <div>
                                 <Route exact path="/" component={LoginView}/>
-                                {!isLoggedIn && <Route path="/todo" component={TodoView}/>}
+                                {isLoggedIn && <Route path="/todo" component={TodoView}/>}
                             </div>
                         </div>
                     </Router>
