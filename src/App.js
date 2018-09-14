@@ -9,8 +9,16 @@ import {Login} from './component/Login';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
-export class App extends Component {
 
+localStorage.setItem("isLoggedIn",false);
+localStorage.setItem("email", "spm1dh@gmail.com");
+localStorage.setItem("password","david");
+export class App extends Component {
+    state = {
+        isLoggedIn: JSON.parse(localStorage.getItem("isLoggedIn")),
+        email:"",
+        password:""
+    };
     constructor(props) {
         super(props);
         this.state = {items: [], text: '', priority: 0, dueDate: moment()};
@@ -22,7 +30,6 @@ export class App extends Component {
 
 
     render() {
-        const isLoggedIn = false;
         return (
             <div className="App">
 
